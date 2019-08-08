@@ -1,0 +1,109 @@
+{
+  "response_code": "1",
+  "response_message": "success",
+  "cities": [
+    {
+      "id": "1",
+      "city_code": "JPR",
+      "city_name": "Jaipur"
+    },
+    {
+      "id": "2",
+      "city_code": "AJM",
+      "city_name": "Ajmer"
+    },
+    {
+      "id": "3",
+      "city_code": "AGR",
+      "city_name": "Agra"
+    },
+    {
+      "id": "4",
+      "city_code": "AHM",
+      "city_name": "Ahmadabad"
+    },
+    {
+      "id": "5",
+      "city_code": "AUR",
+      "city_name": "Aurangabad"
+    },
+    {
+      "id": "6",
+      "city_code": "BANG",
+      "city_name": "Bangalore"
+    },
+    {
+      "id": "7",
+      "city_code": "BHP",
+      "city_name": "Bhopal"
+    },
+    {
+      "id": "8",
+      "city_code": "CHN",
+      "city_name": "Chennai"
+    },
+    {
+      "id": "9",
+      "city_code": "NDL",
+      "city_name": "New Delhi"
+    },
+    {
+      "id": "10",
+      "city_code": "AMR",
+      "city_name": "Amritsar"
+    },
+    {
+      "id": "11",
+      "city_code": "ALL",
+      "city_name": "Allahabad"
+    },
+    {
+      "id": "12",
+      "city_code": "KT",
+      "city_name": "Kota"
+    },
+    {
+      "id": "13",
+      "city_code": "AGT",
+      "city_name": "Agartala"
+    },
+    {
+      "id": "14",
+      "city_code": "JPU",
+      "city_name": "Jodhpur"
+    },
+    {
+      "id": "15",
+      "city_code": "JMU",
+      "city_name": "Jammu"
+    },
+    {
+      "id": "16",
+      "city_code": "GUR",
+      "city_name": "Gurugram"
+    },
+    {
+      "id": "17",
+      "city_code": "PTN",
+      "city_name": "Patna"
+    },
+    {
+      "id": "18",
+      "city_code": "NAG",
+      "city_name": "Nagpur"
+    },
+    {
+      "id": "19",
+      "city_code": "MUM",
+      "city_name": "Navi Mumbai"
+    },
+    {
+      "id": "20",
+      "city_code": "MAN",
+      "city_name": "Manali"
+    }
+
+
+    
+  ]
+}

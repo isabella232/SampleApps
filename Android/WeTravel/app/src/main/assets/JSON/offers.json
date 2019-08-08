@@ -1,0 +1,36 @@
+{
+  "response_code": "1",
+  "response_message": "success",
+  "offers": [
+    {
+      "id": "1",
+      "offer_code": "DEL50",
+      "offer_name": "Jaipur",
+      "offer_price": "500",
+      "offer_desc": "Delhi to Manali \nonly at",
+      "offer_banner": "bg_banner_one.png",
+      "action_banner": "bg_action_banner_one.png",
+      "flag_banner": "0"
+    },
+    {
+      "id": "2",
+      "offer_code": "",
+      "offer_name": "",
+      "offer_price": "",
+      "offer_desc": "",
+      "offer_banner": "bg_banner_two.png",
+      "action_banner": "bg_action_banner_one.png",
+      "flag_banner": "1"
+    },
+    {
+      "id": "3",
+      "offer_code": "DEL50",
+      "offer_name": "Delhi",
+      "offer_price": "500",
+      "offer_desc": "Jaipur to Delhi \nonly at",
+      "offer_banner": "bg_banner_one.png",
+      "action_banner": "bg_action_banner_one.png",
+      "flag_banner": "0"
+    }
+  ]
+}
