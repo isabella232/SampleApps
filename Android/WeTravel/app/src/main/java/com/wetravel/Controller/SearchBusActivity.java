@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.adobe.mobile.Target;
 import com.wetravel.Adapter.SearchOffersAdapter;
 import com.wetravel.Adapter.SearchTravelsAdapter;
 import com.wetravel.Models.Offer;
@@ -418,5 +419,31 @@ public class SearchBusActivity extends AppCompatActivity {
         this.travelName = travelName;
         this.departureTime = departureTime;
         this.busInfo = busInfo;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        targetLoadRequest();
+    }
+
+    private void targetLoadRequest() {
+        Target.loadRequest("mboxTest", "TargetPreviewMboxTest_defaultContent", null, null, null, new Target.TargetCallback<String>() {
+            @Override
+            public void call(final String s) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Loaded content :" + s);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                tvBusFound.setText(tvBusFound.getText().toString() + ": " + s);
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 }

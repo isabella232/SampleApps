@@ -14,12 +14,20 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.adobe.mobile.Config;
+import com.adobe.mobile.Target;
+import com.adobe.mobile.TargetPrefetchObject;
 import com.wetravel.Fragments.HomeFragment;
 import com.wetravel.Fragments.MyProfileFragment;
 import com.wetravel.Fragments.SettingsFragment;
 import com.wetravel.Fragments.MyTicketsFragment;
 import com.wetravel.R;
 import com.wetravel.Utils.Utility;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageView ivMenu;
@@ -43,6 +51,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        this.getWindow().setStatusBarColor(getResources().getColor(R.color.color_E0E0E0));
         setContentView(R.layout.activity_home);
+
+        Config.setContext(this.getApplicationContext());
+        Config.setDebugLogging(true);
 
         Utility.init(this);
         initDrawer();
@@ -250,5 +261,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     public void setHeader(String title){
         tvHeading.setText(title);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        targetPrefetchContent();
+    }
+
+    public void targetPrefetchContent() {
+        List<TargetPrefetchObject> prefetchList = new ArrayList<>();
+        Map<String, Object> profileParameters;
+        profileParameters = new HashMap<String, Object>();
+        profileParameters.put("ProfileParam8Aug", "25");
+        Map<String, Object> mboxParameters1 = new HashMap<String, Object>();
+        mboxParameters1.put("MboxParam8Aug", "1");
+        prefetchList.add(Target.createTargetPrefetchObject("mboxTest", mboxParameters1));
+        Target.TargetCallback<Boolean> prefetchStatusCallback = new Target.TargetCallback<Boolean>() {
+            @Override
+            public void call(final Boolean status) {
+                HomeActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String cachingStatus = status ? "YES" : "NO";
+                        System.out.println("Received Response from prefetch : " + cachingStatus);
+                    }
+                });
+            }};
+        Target.prefetchContent(prefetchList, profileParameters, prefetchStatusCallback);
     }
 }

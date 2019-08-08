@@ -1,0 +1,39 @@
+{
+	"lastModified": "2019-06-21T13:11:45.810Z",
+	"marketingCloud": {
+		"org": "AdobeOrgId"
+	},
+	"target": {
+		"clientCode": "ClientCode",
+		"timeout": 5
+	},
+	"audienceManager": {
+		"server": "",
+		"analyticsForwardingEnabled": false,
+		"timeout": 5
+	},
+	"acquisition": {
+		"server": "xyz.com",
+		"appid": "xyzAppId"
+	},
+	"analytics": {
+		"rsids": "xyzddocs",
+		"server": "analyticsserver",
+		"ssl": true,
+		"offlineEnabled": true,
+		"charset": "UTF-8",
+		"lifecycleTimeout": 300,
+		"privacyDefault": "optedin",
+		"batchLimit": 0,
+		"timezone": "PDT",
+		"timezoneOffset": -420,
+		"referrerTimeout": 0,
+		"backdateSessionInfo": false,
+		"poi": []
+	},
+	"messages": [],
+	"remotes": {
+		"analytics.poi": "poiurl.json",
+		"messages": "messages.json"
+	}
+}
